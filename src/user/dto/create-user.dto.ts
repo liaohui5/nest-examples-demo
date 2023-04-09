@@ -1,5 +1,5 @@
 import { IsEmail, IsNotEmpty, MinLength } from "class-validator";
-import { IsNotExists } from "src/validate/rules/is-not-exists.rule";
+import { IsNotExists } from "../../validate/rules/is-not-exists.rule";
 
 export class CreateUserDto {
   @IsNotEmpty({ message: '有名不能为空' })

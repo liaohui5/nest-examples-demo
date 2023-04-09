@@ -1,5 +1,5 @@
 import { Dependencies, Module } from '@nestjs/common';
-import { UserModule } from 'src/user/user.module';
+import { UserModule } from './user/user.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule, SequelizeModuleOptions } from '@nestjs/sequelize';
 import { ValidatePipe } from './validate/validate.pipe';
@@ -8,6 +8,7 @@ import config from './config';
 import { APP_INTERCEPTOR, APP_PIPE, } from '@nestjs/core';
 import { TypeOrmModule, TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { DataSource } from "typeorm";
+import { User2Module } from './user2/user2.module';
 
 @Dependencies(DataSource)
 @Module({
@@ -27,7 +28,7 @@ import { DataSource } from "typeorm";
       isGlobal: true,
       load: config,
     }),
-    // 集成 sequelize 示例
+    // 集成 sequelize 示例: UserModel
     SequelizeModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -36,14 +37,16 @@ import { DataSource } from "typeorm";
       },
     }),
     UserModule,
-    // 集成 typeorm 示例
+
+    // 集成 typeorm 示例: User2Module
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService): TypeOrmModuleOptions => {
         return configService.get('typeormdb');
       }
-    })
+    }),
+    User2Module
   ],
 })
 export class AppModule {

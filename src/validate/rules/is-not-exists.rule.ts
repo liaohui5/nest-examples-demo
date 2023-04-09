@@ -1,5 +1,5 @@
 import { ValidationOptions, registerDecorator, ValidationArguments } from 'class-validator';
-import { UserModel } from 'src/user/user.model';
+import { UserModel } from '../../user/user.model';
 
 export function IsNotExists(table: string, validationOptions?: ValidationOptions) {
   return function(object: Record<string, any>, property: string) {

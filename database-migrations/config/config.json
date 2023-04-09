@@ -4,7 +4,7 @@
     "password": "123456",
     "database": "nest_demo",
     "port": "3306",
-    "host": "47.92.243.24",
+    "host": "192.168.121.200",
     "dialect": "mysql"
   },
   "test": {

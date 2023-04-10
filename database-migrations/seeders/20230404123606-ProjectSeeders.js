@@ -28,6 +28,7 @@ module.exports = {
     })
 
     await queryInterface.bulkInsert('projects', data.rows, {})
+    await queryInterface.bulkInsert('typeorm_projects', data.rows, {})
   },
 
   async down(queryInterface, Sequelize) {
@@ -38,5 +39,6 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
     await queryInterface.bulkDelete('projects', null, {})
+    await queryInterface.bulkDelete('typeorm_projects', null, {})
   }
 };

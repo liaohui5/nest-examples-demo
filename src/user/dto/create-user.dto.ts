@@ -2,7 +2,7 @@ import { IsEmail, IsNotEmpty, MinLength } from "class-validator";
 import { IsNotExists } from "../../validate/rules/is-not-exists.rule";
 
 export class CreateUserDto {
-  @IsNotEmpty({ message: '有名不能为空' })
+  @IsNotEmpty({ message: '用户名不能为空' })
   readonly username: string;
 
   @IsNotExists('users', { message: '邮箱已经存在' })

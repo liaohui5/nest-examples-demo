@@ -10,6 +10,7 @@ export default registerAs('typeormdb', (): TypeOrmModuleOptions => ({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   autoLoadEntities: true,
+  entities: [],
 }));
 
 

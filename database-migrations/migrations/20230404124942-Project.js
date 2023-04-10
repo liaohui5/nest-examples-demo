@@ -11,7 +11,8 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     const { DataTypes } = Sequelize;
-    await queryInterface.createTable('projects', {
+    const table = {
+
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -35,7 +36,9 @@ module.exports = {
         allowNull: false,
         defaultValue: DataTypes.NOW,
       }
-    })
+    }
+    await queryInterface.createTable('projects', table)
+    await queryInterface.createTable('typeorm_projects', table)
   },
 
   async down(queryInterface, Sequelize) {
@@ -46,5 +49,6 @@ module.exports = {
      * await queryInterface.dropTable('users');
      */
     await queryInterface.dropTable('users')
+    await queryInterface.dropTable('typeorm_users')
   }
 };

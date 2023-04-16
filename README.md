@@ -4,7 +4,11 @@
 - [x] 集成 @nestjs/sequelize
 - [x] 集成 sequelize-cli (数据库迁移和填充)
 - [x] sequelize 关联模型(查询)
-- [x] sequelize + DTO 验证数据: 数据验证(pipe): 抛出自定义数据验证异常(exception) + 全局异常处理(filter) + 自定义验证规则(rule)
+- [x] sequelize + DTO 验证数据: 
+    - 用DTO做数据验证(pipe) 
+    - 抛出自定义数据验证异常(exception) 
+    - 全局异常处理(filter)
+    - 自定义验证规则(rule)
 - [x] intercepter + pipe + 全局异常处理, 返回统一格式数据格式
 - [x] @nestj/sequelize + DTO: 增删改查
 - [x] @nestjs/typeorm + DTO: 增删改查

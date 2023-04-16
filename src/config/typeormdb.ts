@@ -11,6 +11,7 @@ export default registerAs('typeormdb', (): TypeOrmModuleOptions => ({
   database: process.env.DB_NAME,
   autoLoadEntities: true,
   entities: [],
+  logging: true,
 }));
 
 

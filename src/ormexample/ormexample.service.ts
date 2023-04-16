@@ -28,6 +28,11 @@ export class OrmexampleService {
 
   // findAll
   async findAll(): Promise<User[]> {
-    return await this.userRepository.find();
+    return await this.userRepository.find({
+      take: 10,
+      relations: {
+        projects: true,
+      }
+    })
   }
 }

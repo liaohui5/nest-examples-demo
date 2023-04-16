@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, BaseEntity } from "typeorm";
+import { User } from "./user.entity";
 
-@Entity('typeorm_users')
-export class User {
+@Entity('typeorm_projects')
+export class Project extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -11,9 +12,15 @@ export class User {
   @Column()
   project_name: string;
 
-  @Column()
+  @Column({ select: false })
   created_at: string;
 
-  @Column()
-  udpated_at: string;
+  @Column({ select: false })
+  updated_at: string;
+
+  // 多对一
+  @ManyToOne(() => User, (user) => user.projects)
+  @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
+  // @JoinColumn({ name: '当前表id', 关联的表的外键字段: 'id' })
+  user: User
 }

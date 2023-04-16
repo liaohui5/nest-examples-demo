@@ -6,6 +6,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
 import { User } from './entities/user.entity';
+import { Project } from './entities/project.entity';
 
 @Dependencies(DataSource)
 @Module({
@@ -18,7 +19,7 @@ import { User } from './entities/user.entity';
       }
     }),
 
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Project]),
   ],
   controllers: [OrmexampleController],
   providers: [OrmexampleService],

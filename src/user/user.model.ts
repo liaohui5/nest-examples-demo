@@ -35,6 +35,11 @@ export class UserModel extends Model<UserModel> {
   })
   status: number;
 
+  @Column({
+    type: DataType.VIRTUAL
+  })
+  token?: string;
+
   // -- 关联模型 -- //
   @HasMany(() => ProjectModel)
   projects: ProjectModel[]

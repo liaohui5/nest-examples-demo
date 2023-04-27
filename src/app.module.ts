@@ -7,6 +7,7 @@ import { OrmexampleModule } from './ormexample/ormexample.module';
 
 import config from './config';
 import { APP_INTERCEPTOR, APP_PIPE, } from '@nestjs/core';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   providers: [
@@ -32,6 +33,8 @@ import { APP_INTERCEPTOR, APP_PIPE, } from '@nestjs/core';
 
     // 集成 typeorm 示例
     OrmexampleModule,
+
+    AuthModule,
   ],
 })
 export class AppModule { }

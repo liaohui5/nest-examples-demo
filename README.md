@@ -13,8 +13,8 @@
 - [x] @nestj/sequelize + DTO: 增删改查
 - [x] @nestjs/typeorm + DTO: 增删改查
 - [x] AuthGuard: jwt 登录验证 + bcrypt 密码 hash
-- [ ] multer: 文件上传/下载(pipe)
-- [ ] serialization: 序列化响应 + comporession: 压缩响应体
+- [x] multer: 文件上传/下载(pipe)
+- [x] serialization: 序列化响应 + comporession: 压缩响应体
 - [ ] schedule: 定时任务
 - [ ] queue: 任务队列
 - [ ] cacheManager: 缓存

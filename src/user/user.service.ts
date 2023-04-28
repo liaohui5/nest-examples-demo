@@ -36,6 +36,9 @@ export class UserService {
   async list() {
     return await this.userModel.findAll({
       include: [this.projectModel],
+      // raw: true,
+      // 加上这个选项会让查询出来的结果变
+      // 为普通的对象, 而不是模型的实例
     })
   }
 

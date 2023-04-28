@@ -1,8 +1,9 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { GlobalExceptionHandlerFilter } from './global-exception-handler.filter';
 import { NestExpressApplication } from "@nestjs/platform-express"
 import { resolve } from "path"
+import { ClassSerializerInterceptor } from '@nestjs/common';
 
 async function bootstrap() {
   // 实例化 app 实例
@@ -16,6 +17,9 @@ async function bootstrap() {
 
   // 允许跨域
   app.enableCors();
+
+  // 全局响应序列化
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
   // 设置静态文件访问
   app.useStaticAssets(resolve(process.cwd(), "uploads"), {

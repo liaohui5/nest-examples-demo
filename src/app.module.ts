@@ -8,6 +8,7 @@ import { OrmexampleModule } from './ormexample/ormexample.module';
 import config from './config';
 import { APP_INTERCEPTOR, APP_PIPE, } from '@nestjs/core';
 import { AuthModule } from './auth/auth.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   providers: [
@@ -35,6 +36,8 @@ import { AuthModule } from './auth/auth.module';
     OrmexampleModule,
 
     AuthModule,
+
+    UploadModule,
   ],
 })
 export class AppModule { }

@@ -12,10 +12,8 @@
 - [x] intercepter + pipe + 全局异常处理, 返回统一格式数据格式
 - [x] @nestj/sequelize + DTO: 增删改查
 - [x] @nestjs/typeorm + DTO: 增删改查
-- [ ] middleware: jwt 登录验证 + bcrypt 密码 hash
+- [x] AuthGuard: jwt 登录验证 + bcrypt 密码 hash
 - [ ] multer: 文件上传/下载(pipe)
-- [ ] looger: 日志
-- [ ] cacheManager: 缓存
 - [ ] serialization: 序列化响应 + comporession: 压缩响应体
 - [ ] schedule: 定时任务
 - [ ] queue: 任务队列
@@ -24,6 +22,8 @@
 - [ ] http 客户端
 - [ ] cookie/session: 会话处理
 - [ ] MVC模式: 服务端渲染而不是只提供API
+- [ ] looger: 日志
+- [ ] cacheManager: 缓存
 
 
 ## 目录说明

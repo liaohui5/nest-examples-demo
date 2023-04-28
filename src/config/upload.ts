@@ -2,7 +2,7 @@ import { registerAs } from '@nestjs/config';
 import { diskStorage } from 'multer';
 import { resolve } from 'path';
 
-const uploadPath = resolve(__dirname, "uploads")
+const uploadPath = resolve(process.cwd(), "uploads")
 
 export default registerAs('upload', () => ({
   // https://github.com/expressjs/multer#multeropts
